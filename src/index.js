@@ -28,4 +28,4 @@ app.use(express.json());
 const server = app.listen(app.get("port"), () => {
     console.log("Server is on port" + " " + process.env.PORT)
 })
-    initPuppeter()
+    // initPuppeter()
