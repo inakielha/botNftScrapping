@@ -5,7 +5,7 @@ require ("dotenv").config();
 // console.log(require ("dotenv").config({path:'../.env'}))
 const dbConnection = async ()=>{
     try {
-        await mongoose.connect(process.env.MONGO_CONNECTIONTWO);
+        await mongoose.connect(process.env.MONGO_URL);
         console.log("Db connected")
     }catch(e){
         console.log(e,"db fail")
