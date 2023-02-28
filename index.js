@@ -1,7 +1,7 @@
 const  express =  require("express")
 const cors = require('cors')
 // const { initPuppeter } = require("./routes/bot")
-const { dbConnection } = require("./dataBase/db.js")
+const { dbConnection } = require("./src/dataBase/db.js")
 require('dotenv').config()
 // require('dotenv').config({path:'../.env'})
 const app = express()
