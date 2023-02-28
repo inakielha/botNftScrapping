@@ -5,7 +5,7 @@ async function loginTwitter(user_name, password) {
   await this.page.goto("https://twitter.com/i/flow/login", { waitUntil: "networkidle2" });
   await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
 
-  await this.page.type('input[autocapitalize="sentences"]', "ravevis950@ekcsoft.com", { delay: 50 });
+  await this.page.type('input[autocapitalize="sentences"]', "pofikij325@chotunai.com", { delay: 50 });
   await this.page.click('div[role="button"]:nth-child(n+4)');
   await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
   const span = await this.page.$$eval('span', (divs) =>
@@ -17,7 +17,7 @@ async function loginTwitter(user_name, password) {
   );
   // console.log(span)
   if (span[1].text === "Introduce tu número de teléfono o nombre de usuario") {
-    await this.page.type('input[autocapitalize="none"]', "martinnft666", { delay: 50 });
+    await this.page.type('input[autocapitalize="none"]', "martin96219047", { delay: 50 });
     await this.page.keyboard.press('Enter')
     await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
   }
