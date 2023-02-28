@@ -1,6 +1,6 @@
 const  express =  require("express")
 const cors = require('cors')
-const { initPuppeter } = require("./routes/bot")
+// const { initPuppeter } = require("./routes/bot")
 const { dbConnection } = require("./dataBase/db")
 // import route from './routes/index'
 require('dotenv').config()
@@ -29,4 +29,4 @@ const server = app.listen(app.get("port"), () => {
     console.log("Server is on port" + " " + process.env.PORT)
 })
 
-    initPuppeter()
+    // initPuppeter()
