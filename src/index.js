@@ -1,12 +1,12 @@
 const  express =  require("express")
 const cors = require('cors')
-const { initPuppeter } = require("./routes/bot")
-// const { dbConnection } = require("./dataBase/db")
+// const { initPuppeter } = require("./routes/bot")
+const { dbConnection } = require("./dataBase/db")
 // import route from './routes/index'
-require('dotenv').config({path:'../.env'})
-
+require('dotenv').config()
+// require('dotenv').config({path:'../.env'})
 const app = express()
-// dbConnection()
+dbConnection()
 
 
 app.set("port", process.env.PORT || 2500)
@@ -28,4 +28,5 @@ app.use(express.json());
 const server = app.listen(app.get("port"), () => {
     console.log("Server is on port" + " " + process.env.PORT)
 })
-    // initPuppeter()
+
+    initPuppeter()
