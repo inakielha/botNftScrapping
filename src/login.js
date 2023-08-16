@@ -1,15 +1,18 @@
 const puppeteer = require("puppeteer")
-const { configuracion } = require("./errors")
+const { configuracion } = require("./errors");
+const { delay } = require("./helper/helper");
 
 async function loginTwitter(user_name, password) {
   await this.page.goto("https://twitter.com/i/flow/login", { waitUntil: "networkidle2" });
-  await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
+  await this.page.waitForTimeout(3000 + Math.floor(Math.random() * 500));
 
-  await this.page.type('input[autocapitalize="sentences"]', "pofikij325@chotunai.com", { delay: 50 });
-  await this.page.click('div[role="button"]:nth-child(n+4)');
+  await this.page.type('input', "matiasDemichelis10@gmail.com", { delay: 50 });
+  await this.page.keyboard.press("Tab")
+  await this.page.waitForTimeout(1000);
+  await this.page.keyboard.press("Enter")
   await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
   const span = await this.page.$$eval('span', (divs) =>
-    divs.map((div) => {
+    divs.map((div) => {       
       return {
         text: div.textContent
       };
@@ -17,25 +20,14 @@ async function loginTwitter(user_name, password) {
   );
   // console.log(span)
   if (span[1].text === "Introduce tu número de teléfono o nombre de usuario") {
-    await this.page.type('input[autocapitalize="none"]', "martin96219047", { delay: 50 });
+    await this.page.type('input[autocapitalize="none"]', "Matias824095", { delay: 50 });
     await this.page.keyboard.press('Enter')
     await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
   }
   await this.page.type('input[autocapitalize="sentences"][name="password"]', "it4Consulting", { delay: 50 });
   await this.page.keyboard.press('Enter')
   await this.page.waitForTimeout(1000 + Math.floor(Math.random() * 500));
-  //   const divs = await this.page.$$eval('div[data-testid="LoginForm_Login_Button"]', (divs) =>
-  //   divs.map((div) => {
-  //     return {
-  //       text: div.textContent
-  //     };
-  //   })
-  // );
-  //     console.log(divs)
-  //     await this.page.click(configuracion.login_button);
-  //     await this.page.waitForNavigation({ waitUntil: "networkidle2" });
-  //     await this.page.waitForTimeout(500 + Math.floor(Math.random() * 500));
-  //     return loginResponse;
+  await delay(4000)
 }
 module.exports = {
   loginTwitter

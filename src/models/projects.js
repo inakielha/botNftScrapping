@@ -7,7 +7,6 @@ const ProjectSchema = new Schema({
     },
     twitterFollowers: {
         type: String,
-        required: true
     },
     discrodFollowers: {
         type: String,
@@ -20,29 +19,12 @@ const ProjectSchema = new Schema({
         type: String,
         required: true
     },
-    minted: {
-        type: Boolean,
-        default: false
-    },
-    volumeToday: {
-        type: String
-    },
-    supply: {
-        type: String
-    },
-    totalVolume:{
-        type: String
-    },
-    floorPrice:{
-        type: String
-    },
     hype:{
         type: Number
     },
     url:{
         type: String,
-        require:true
-    }
+    },
 }, {
     _id: false
 })

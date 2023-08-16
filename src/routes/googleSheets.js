@@ -3,6 +3,8 @@ const path = require('path');
 const process = require('process');
 const { authenticate } = require('@google-cloud/local-auth');
 const { google } = require('googleapis');
+const util = require('node:util');
+
 
 
 // If modifying these scopes, delete token.json.
@@ -102,6 +104,8 @@ async function api() {
     let excelInfo = await listMajors(auth)
     let set = new Set(excelInfo.map(JSON.stringify));
     let uniqueValues = Array.from(set).map(JSON.parse);
+    console.log(util.inspect(uniqueValues, {maxArrayLength: null, depth:null }))
+    // console.log(uniqueValues)
     return uniqueValues
   } catch (e) {
     console.log(e)
